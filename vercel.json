@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/home.js": { "includeFiles": "template3.html" }
+    "api/home.js": { "includeFiles": "template.html" }
   },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
