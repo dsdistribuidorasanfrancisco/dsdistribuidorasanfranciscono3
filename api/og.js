@@ -3,7 +3,7 @@
 module.exports = async (req, res) => {
   const slug = (req.query.slug || "").toLowerCase().trim();
 
-  const STORE_NAME = "DS Distribuidora San Francisco NO.3";
+  const STORE_NAME = "DS Distribuidora San Francisco No.3";
   const baseUrl = "https://" + req.headers.host;
 
   if (!slug) {
@@ -12,6 +12,7 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // ── Buscar producto en Firebase ─────────────────────────────────
   const FIREBASE_URL = "https://dsdistribuidorasfc3-default-rtdb.firebaseio.com/products.json";
 
   let ogTitle = STORE_NAME;
@@ -36,6 +37,7 @@ module.exports = async (req, res) => {
           }
           return false;
         });
+
         if (producto) {
           ogTitle = producto.name || STORE_NAME;
           ogPrice = producto.price || "";
